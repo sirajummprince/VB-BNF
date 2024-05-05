@@ -18,7 +18,5 @@ Department of Computer Science, Brock University.
         import torch.nn as nn
         import torch.nn.functional as F
         from google.colab import files
-    </code>
-    
+    </code> 
   </pre>
-
