@@ -11,8 +11,14 @@ supervised by Dr. Yifeng Li, Assistant Professor,
 Department of Computer Science, Brock University.
 
 # Import Libraries
-  import pandas as pd
-  import torch
-  import torch.nn as nn
-  import torch.nn.functional as F
-  from google.colab import files
+  <pre>
+    <code>
+        import pandas as pd
+        import torch
+        import torch.nn as nn
+        import torch.nn.functional as F
+        from google.colab import files
+    </code>
+    
+  </pre>
+
