@@ -9,3 +9,10 @@ the course COSC 5P77 Probabilistic Graphical
 Models and Neural Generative Models, which is
 supervised by Dr. Yifeng Li, Assistant Professor,
 Department of Computer Science, Brock University.
+
+# Import Libraries
+  import pandas as pd
+  import torch
+  import torch.nn as nn
+  import torch.nn.functional as F
+  from google.colab import files
