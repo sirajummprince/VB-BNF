@@ -45,19 +45,19 @@ Department of Computer Science, Brock University.
 <pre>
   <code>
     class VBNMF(nn.Module):
-    def __init__(self, input_dim, latent_dim):
-        super(VBNMF, self).__init__()
-        self.input_dim = input_dim
-        self.latent_dim = latent_dim
-        self.W = nn.Parameter(torch.randn(input_dim, latent_dim))
-        self.H = nn.Parameter(torch.randn(latent_dim, input_dim))
-        self.a = nn.Parameter(torch.randn(input_dim))
-        self.b = nn.Parameter(torch.randn(input_dim))
+      def __init__(self, input_dim, latent_dim):
+          super(VBNMF, self).__init__()
+          self.input_dim = input_dim
+          self.latent_dim = latent_dim
+          self.W = nn.Parameter(torch.randn(input_dim, latent_dim))
+          self.H = nn.Parameter(torch.randn(latent_dim, input_dim))
+          self.a = nn.Parameter(torch.randn(input_dim))
+          self.b = nn.Parameter(torch.randn(input_dim))
 
-    def forward(self, X, n_samples=1):
-        KL_loss = 0
-        recon_loss = 0
-        for _ in range(n_samples):
+      def forward(self, X, n_samples=1):
+          KL_loss = 0
+          recon_loss = 0
+          for _ in range(n_samples):
             Q_W = torch.distributions.Normal(0, 1).sample(self.W.shape).to(X.device)
             Q_H = torch.distributions.Normal(0, 1).sample(self.H.shape).to(X.device)
             W_sample = self.W + Q_W
@@ -66,10 +66,10 @@ Department of Computer Science, Brock University.
             recon_loss += F.binary_cross_entropy_with_logits(recon, X, reduction='sum')
             KL_loss += 0.5 * torch.sum(self.W**2 + self.H**2 - 1 - self.a.log() - self.b.log())
 
-        recon_loss /= n_samples
-        KL_loss /= n_samples
-        ELBO = recon_loss + KL_loss
-        return ELBO
+          recon_loss /= n_samples
+          KL_loss /= n_samples
+          ELBO = recon_loss + KL_loss
+          return ELBO
   </code>
 </pre>
 # Example usage
