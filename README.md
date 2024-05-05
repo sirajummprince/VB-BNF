@@ -17,6 +17,21 @@ Department of Computer Science, Brock University.
         import torch
         import torch.nn as nn
         import torch.nn.functional as F
+        import io
         from google.colab import files
+    </code> 
+  </pre>
+# Upload Files to Colab from Local Machine
+<pre>
+    <code>
+        uploaded = files.upload
+    </code> 
+  </pre>
+# Load the Data
+<pre>
+    <code>
+        data = pd.read_csv(io.BytesIO(uploaded['dataFilt.csv'], index_col=0))
+        pathways = pd.read_csv(io.BytesIO(uploaded['kegg_legacy_ensembl.csv'], index_col=0))
+        sample_classes = pd.read_csv(io.BytesIO(uploaded['sampletype.csv'], index_col=0))
     </code> 
   </pre>
