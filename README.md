@@ -85,11 +85,11 @@ Department of Computer Science, Brock University.
 <pre>
   <code>
     n_epochs = 100
-for epoch in range(n_epochs):
-    optimizer.zero_grad()
-    loss = model(X, n_samples=5)
-    loss.backward()
-    optimizer.step()
-    print(f'Epoch {epoch:03d}, Loss {loss:.4f}')
+    for epoch in range(n_epochs):
+      optimizer.zero_grad()
+      loss = model(X, n_samples=5)
+      loss.backward()
+      optimizer.step()
+      print(f'Epoch {epoch:03d}, Loss {loss:.4f}')
   </code>
 </pre>
